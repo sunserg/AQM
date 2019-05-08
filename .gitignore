@@ -9,3 +9,5 @@ lib/esp8266-base
 *.cache
 Debug/
 *.suo
+.vs/
+Release/

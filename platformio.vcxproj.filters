@@ -9,87 +9,18 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
-    <Filter Include="lib">
-      <UniqueIdentifier>{ace4ae59-f29f-419d-bdef-73818e0b97c5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="lib\esp8266-base">
-      <UniqueIdentifier>{83eed3b2-f85e-4897-bc4f-450d0fc9dc5d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="lib\BME680">
-      <UniqueIdentifier>{619a3af3-5210-44c4-962e-c2af7b05067a}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="platformio.ini" />
-    <None Include="lib\BME680\changelog.md">
-      <Filter>lib\BME680</Filter>
-    </None>
-    <None Include="lib\BME680\LICENSE">
-      <Filter>lib\BME680</Filter>
-    </None>
-    <None Include="lib\BME680\README.md">
-      <Filter>lib\BME680</Filter>
-    </None>
-    <None Include="lib\esp8266-base\README.md">
-      <Filter>lib\esp8266-base</Filter>
-    </None>
-    <None Include="lib\README">
-      <Filter>lib</Filter>
-    </None>
-    <None Include="lib\README.md">
-      <Filter>lib</Filter>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\AQMonitor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="lib\BME680\bme680.c">
-      <Filter>lib\BME680</Filter>
-    </ClCompile>
-    <ClCompile Include="lib\BME680\bsec.cpp">
-      <Filter>lib\BME680</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\AQMonitor.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="lib\BME680\bme680.h">
-      <Filter>lib\BME680</Filter>
-    </ClInclude>
-    <ClInclude Include="lib\BME680\bme680_defs.h">
-      <Filter>lib\BME680</Filter>
-    </ClInclude>
-    <ClInclude Include="lib\BME680\bsec.h">
-      <Filter>lib\BME680</Filter>
-    </ClInclude>
-    <ClInclude Include="lib\BME680\bsec_datatypes.h">
-      <Filter>lib\BME680</Filter>
-    </ClInclude>
-    <ClInclude Include="lib\BME680\bsec_interface.h">
-      <Filter>lib\BME680</Filter>
-    </ClInclude>
-    <ClInclude Include="lib\esp8266-base\esp8266-base.h">
-      <Filter>lib\esp8266-base</Filter>
-    </ClInclude>
-    <ClInclude Include="lib\esp8266-base\InfluxDBCollector.h">
-      <Filter>lib\esp8266-base</Filter>
-    </ClInclude>
-    <ClInclude Include="lib\esp8266-base\Logger.h">
-      <Filter>lib\esp8266-base</Filter>
-    </ClInclude>
-    <ClInclude Include="lib\esp8266-base\Settings.h">
-      <Filter>lib\esp8266-base</Filter>
-    </ClInclude>
-    <ClInclude Include="lib\esp8266-base\SystemCheck.h">
-      <Filter>lib\esp8266-base</Filter>
-    </ClInclude>
-    <ClInclude Include="lib\esp8266-base\WebServerBase.h">
-      <Filter>lib\esp8266-base</Filter>
-    </ClInclude>
-    <ClInclude Include="lib\esp8266-base\WiFi.h">
-      <Filter>lib\esp8266-base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -126,15 +57,5 @@
     <ClInclude Include="src\WebServer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Library Include="lib\BME680\libalgobsec.a">
-      <Filter>lib\BME680</Filter>
-    </Library>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="lib\readme.txt">
-      <Filter>lib</Filter>
-    </Text>
   </ItemGroup>
 </Project>
