@@ -6,3 +6,6 @@
 .vscode/launch.json
 lib/esp8266-base
 .vscode/ipch/
+*.cache
+Debug/
+*.suo

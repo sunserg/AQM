@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Path>C:\\Program Files\\Common Files\\Microsoft Shared\\Microsoft Online Services;C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\Microsoft Online Services;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files (x86)\\Microsoft SQL Server\\Client SDK\\ODBC\\130\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\140\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\140\\DTS\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\140\\Tools\\Binn\\ManagementStudio\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\140\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\140\\DTS\\Binn\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\PuTTY\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Inductive Automation\\Ignition;C:\\Program Files\\Microsoft\\Web Platform Installer\\;C:\\Users\\SSs\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\SSs\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\SSs\\AppData\\Roaming\\npm;c:\\python27\\Scripts</Path>
   </PropertyGroup>
@@ -16,18 +16,17 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{0FA9C3A8-452B-41EF-A418-9102B170F49F}</ProjectGuid>
     <Keyword>MakeFileProj</Keyword>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Makefile</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Makefile</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -43,13 +42,13 @@
     <NMakeBuildCommandLine>platformio -f -c visualstudio run</NMakeBuildCommandLine>
     <NMakeCleanCommandLine>platformio -f -c visualstudio run --target clean</NMakeCleanCommandLine>
     <NMakePreprocessorDefinitions>PLATFORMIO=30607;ESP8266;ARDUINO_ARCH_ESP8266;ARDUINO_ESP8266_WEMOS_D1MINI;F_CPU=80000000L;__ets__;ICACHE_FLASH;ARDUINO=10805;ARDUINO_BOARD="PLATFORMIO_D1_MINI";FLASHMODE_DIO;LWIP_OPEN_SRC;TCP_MSS=536;LWIP_FEATURES=1;LWIP_IPV6=0;VTABLES_IN_FLASH</NMakePreprocessorDefinitions>
-    <NMakeIncludeSearchPath>$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\tools\sdk\include;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\tools\sdk\libc\xtensa-lx106-elf\include;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\cores\esp8266;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\tools\sdk\lwip2\include;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\variants\d1_mini;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ArduinoOTA;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\DNSServer\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\EEPROM;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266AVRISP\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266HTTPClient\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266HTTPUpdateServer\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266LLMNR;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266NetBIOS;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266SSDP;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266WebServer\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266WiFi\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266WiFiMesh\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266httpUpdate\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266mDNS\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\Ethernet\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\GDBStub\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\Hash\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\SD\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\SPI;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\SPISlave\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\Servo\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\SoftwareSerial;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\TFT_Touch_Shield_V2;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\Ticker;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\Wire;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\esp8266\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\toolchain-xtensa\xtensa-lx106-elf\include;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\toolchain-xtensa\xtensa-lx106-elf\include\c++\4.8.2;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\toolchain-xtensa\xtensa-lx106-elf\include\c++\4.8.2\xtensa-lx106-elf;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\toolchain-xtensa\lib\gcc\xtensa-lx106-elf\4.8.2\include;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\toolchain-xtensa\lib\gcc\xtensa-lx106-elf\4.8.2\include-fixed;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\tool-unity;s:\Source\Repos\PIO-test\include;s:\Source\Repos\PIO-test\src</NMakeIncludeSearchPath>
+    <NMakeIncludeSearchPath>$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\tools\sdk\include;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\tools\sdk\libc\xtensa-lx106-elf\include;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\cores\esp8266;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\tools\sdk\lwip2\include;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\variants\d1_mini;s:\Source\Repos\PIO-test\lib\BME680;s:\Source\Repos\PIO-test\lib\esp8266-base;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\EEPROM;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266HTTPClient\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266HTTPUpdateServer\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266WebServer\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266WiFi\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266mDNS\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\SPI;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\Wire;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ArduinoOTA;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\DNSServer\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266AVRISP\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266LLMNR;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266NetBIOS;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266SSDP;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266WiFiMesh\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266httpUpdate\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\Ethernet\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\GDBStub\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\Hash\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\SD\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\SPISlave\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\Servo\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\SoftwareSerial;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\TFT_Touch_Shield_V2;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\Ticker;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\esp8266\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\toolchain-xtensa\xtensa-lx106-elf\include;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\toolchain-xtensa\xtensa-lx106-elf\include\c++\4.8.2;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\toolchain-xtensa\xtensa-lx106-elf\include\c++\4.8.2\xtensa-lx106-elf;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\toolchain-xtensa\lib\gcc\xtensa-lx106-elf\4.8.2\include;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\toolchain-xtensa\lib\gcc\xtensa-lx106-elf\4.8.2\include-fixed;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\tool-unity;s:\Source\Repos\PIO-test\include;s:\Source\Repos\PIO-test\src</NMakeIncludeSearchPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <NMakeBuildCommandLine>platformio run</NMakeBuildCommandLine>
     <NMakeCleanCommandLine>platformio run --target clean</NMakeCleanCommandLine>
     <NMakePreprocessorDefinitions>PLATFORMIO=30607;ESP8266;ARDUINO_ARCH_ESP8266;ARDUINO_ESP8266_WEMOS_D1MINI;F_CPU=80000000L;__ets__;ICACHE_FLASH;ARDUINO=10805;ARDUINO_BOARD="PLATFORMIO_D1_MINI";FLASHMODE_DIO;LWIP_OPEN_SRC;TCP_MSS=536;LWIP_FEATURES=1;LWIP_IPV6=0;VTABLES_IN_FLASH</NMakePreprocessorDefinitions>
-    <NMakeIncludeSearchPath>$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\tools\sdk\include;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\tools\sdk\libc\xtensa-lx106-elf\include;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\cores\esp8266;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\tools\sdk\lwip2\include;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\variants\d1_mini;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ArduinoOTA;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\DNSServer\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\EEPROM;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266AVRISP\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266HTTPClient\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266HTTPUpdateServer\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266LLMNR;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266NetBIOS;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266SSDP;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266WebServer\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266WiFi\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266WiFiMesh\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266httpUpdate\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266mDNS\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\Ethernet\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\GDBStub\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\Hash\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\SD\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\SPI;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\SPISlave\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\Servo\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\SoftwareSerial;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\TFT_Touch_Shield_V2;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\Ticker;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\Wire;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\esp8266\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\toolchain-xtensa\xtensa-lx106-elf\include;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\toolchain-xtensa\xtensa-lx106-elf\include\c++\4.8.2;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\toolchain-xtensa\xtensa-lx106-elf\include\c++\4.8.2\xtensa-lx106-elf;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\toolchain-xtensa\lib\gcc\xtensa-lx106-elf\4.8.2\include;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\toolchain-xtensa\lib\gcc\xtensa-lx106-elf\4.8.2\include-fixed;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\tool-unity;s:\Source\Repos\PIO-test\include;s:\Source\Repos\PIO-test\src</NMakeIncludeSearchPath>
+    <NMakeIncludeSearchPath>$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\tools\sdk\include;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\tools\sdk\libc\xtensa-lx106-elf\include;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\cores\esp8266;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\tools\sdk\lwip2\include;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\variants\d1_mini;s:\Source\Repos\PIO-test\lib\BME680;s:\Source\Repos\PIO-test\lib\esp8266-base;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\EEPROM;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266HTTPClient\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266HTTPUpdateServer\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266WebServer\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266WiFi\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266mDNS\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\SPI;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\Wire;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ArduinoOTA;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\DNSServer\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266AVRISP\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266LLMNR;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266NetBIOS;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266SSDP;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266WiFiMesh\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266httpUpdate\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\Ethernet\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\GDBStub\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\Hash\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\SD\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\SPISlave\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\Servo\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\SoftwareSerial;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\TFT_Touch_Shield_V2;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\Ticker;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\framework-arduinoespressif8266\libraries\esp8266\src;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\toolchain-xtensa\xtensa-lx106-elf\include;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\toolchain-xtensa\xtensa-lx106-elf\include\c++\4.8.2;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\toolchain-xtensa\xtensa-lx106-elf\include\c++\4.8.2\xtensa-lx106-elf;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\toolchain-xtensa\lib\gcc\xtensa-lx106-elf\4.8.2\include;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\toolchain-xtensa\lib\gcc\xtensa-lx106-elf\4.8.2\include-fixed;$(HOMEDRIVE)$(HOMEPATH)\.platformio\packages\tool-unity;s:\Source\Repos\PIO-test\include;s:\Source\Repos\PIO-test\src</NMakeIncludeSearchPath>
   </PropertyGroup>
   <ItemDefinitionGroup>
   </ItemDefinitionGroup>
@@ -57,6 +56,77 @@
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
   <ItemGroup>
+    <None Include="lib\BME680\changelog.md" />
+    <None Include="lib\BME680\LICENSE" />
+    <None Include="lib\BME680\README.md" />
+    <None Include="lib\esp8266-base\README.md" />
+    <None Include="lib\README" />
+    <None Include="lib\README.md" />
     <None Include="platformio.ini" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="lib\BME680\bme680.c" />
+    <ClCompile Include="lib\BME680\bsec.cpp" />
+    <ClCompile Include="src\AQMonitor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="lib\BME680\bme680.h" />
+    <ClInclude Include="lib\BME680\bme680_defs.h" />
+    <ClInclude Include="lib\BME680\bsec.h" />
+    <ClInclude Include="lib\BME680\bsec_datatypes.h" />
+    <ClInclude Include="lib\BME680\bsec_interface.h" />
+    <ClInclude Include="lib\esp8266-base\esp8266-base.h" />
+    <ClInclude Include="lib\esp8266-base\InfluxDBCollector.h" />
+    <ClInclude Include="lib\esp8266-base\Logger.h" />
+    <ClInclude Include="lib\esp8266-base\Settings.h" />
+    <ClInclude Include="lib\esp8266-base\SystemCheck.h" />
+    <ClInclude Include="lib\esp8266-base\WebServerBase.h" />
+    <ClInclude Include="lib\esp8266-base\WiFi.h" />
+    <ClInclude Include="src\AQMonitor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AQSensors.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AQSensors.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\LED.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\LED.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\WebPages.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\WebServer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\WebServer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="lib\BME680\libalgobsec.a" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="lib\readme.txt" />
   </ItemGroup>
 </Project>
