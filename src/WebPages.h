@@ -37,7 +37,7 @@ const char CONFIG_PAGE[] PROGMEM = R"=====(
    <br><br>
    <fieldset style='display: inline-block; width: 300px'>
     <legend>LED settings</legend>
-    Blinik interval:<br>
+    Blink interval:<br>
     <input type="text" name="blink_interval" value="%d"><br>
     <small><em>in seconds, 0 to disable blinking, max value - 3600</em></small><br>
    </fieldset>
