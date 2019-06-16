@@ -54,8 +54,12 @@ InfluxDBCollector telemetryCollector = InfluxDBCollector(
 
 WebServer webServer = WebServer(&settingsData.network, &logger, &systemCheck);
 
+OLED oled = OLED(&aqSensors);
+
+ADC_MODE(ADC_VCC);
+
 void setup()
-{ 
+{   
     Serial.begin(115200);
     while (! Serial) {
         delay(1);
@@ -67,6 +71,7 @@ void setup()
     webServer.begin();
     systemCheck.begin();
     telemetryCollector.begin();
+    oled.begin();
 
     wifi.connect();
 }
@@ -77,7 +82,7 @@ void loop() {
     aqSensors.loop();
     settings.loop();
     led.loop();
-    systemCheck.loop();
+//    systemCheck.loop();
     telemetryCollector.loop();
 
     if (settingsData.influxDB.enable) {
@@ -87,6 +92,8 @@ void loop() {
         telemetryCollector.stop();
         systemCheck.start();
     }
+
+    oled.loop();
 
     delay(100);
 }

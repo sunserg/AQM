@@ -10,6 +10,7 @@
 
 #include "AQSensors.h"
 #include "LED.h"
+#include "OLED.h"
 #include "esp8266-base.h"
 
 #define HTTP_PORT 80
