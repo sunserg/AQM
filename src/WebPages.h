@@ -25,14 +25,6 @@ const char CONFIG_PAGE[] PROGMEM = R"=====(
      <option value="28" %s>28 days</option>
     </select><br>
     <small><em>Period over which the sensor will recalibrate its IAQ values (requires restart)</em></small><br>
-    <br>
-    Gas sensor resistance at AQ 25:<br>
-    <input type="text" name="good_aq_res" value="%d"><br>
-    <small><em>in kohm</em></small><br>
-    <br>
-    Gas sensor resistance at AQ 250:<br>
-    <input type="text" name="bad_aq_res" value="%d"><br>
-    <small><em>in kohm</em></small><br>
    </fieldset>
    <br><br>
    <fieldset style='display: inline-block; width: 300px'>
@@ -60,5 +52,5 @@ const char GET_JSON[] PROGMEM = R"=====({
  "iaq_accuracy":%d,
  "iaq":%.2f,
  "static_iaq":%.2f,
- "calculated_iaq":%.2f
+ "free_heap": %d
 })=====";
