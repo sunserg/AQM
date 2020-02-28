@@ -5,3 +5,7 @@
 .vscode/launch.json
 lib/esp8266-base
 .vscode/ipch/
+.pio
+.vs
+.vscode
+ARM/Release
