@@ -57,6 +57,7 @@
   </ImportGroup>
   <ItemGroup>
     <None Include="platformio.ini" />
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src/AQMonitor.cpp">
