@@ -1,5 +1,4 @@
-#ifndef _WEBSERVER_H_
-#define _WEBSERVER_H_
+#pragma once
 
 #include "AQMonitor.h"
 #include "WebServerBase.h"
@@ -7,8 +6,9 @@
 
 class WebServer: public WebServerBase {
     public:
-        WebServer(NetworkSettings* networkSettings, Logger* logger, SystemCheck* systemCheck);
+        WebServer(Logger* logger, NetworkSettings* networkSettings);
         void registerHandlers();
+        void handle_stats();
         void handle_root();
         void handle_get();
         void handle_settings();
@@ -16,4 +16,3 @@ class WebServer: public WebServerBase {
         void handle_blink();
 };
 
-#endif

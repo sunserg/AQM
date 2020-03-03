@@ -1,31 +1,15 @@
-#define PROGMEM ICACHE_RODATA_ATTR
+//#define PROGMEM ICACHE_RODATA_ATTR
 
 const char CONFIG_PAGE[] PROGMEM = R"=====(
 <HTML>
  <HEAD>
-   <TITLE>Air quality monitor</TITLE>
+   <TITLE>Air quality monitor (BME680)</TITLE>
  </HEAD>
  <BODY>
   <form action="/settings" method="get">
    %s<br><br>
    %s<br><br>
-   <fieldset style='display: inline-block; width: 300px'>
-    <legend>AQ Sensor settings</legend>
-    Temperature offset:<br>
-    <input type="text" name="temp_offset" value="%d"><br>
-    <small><em>in 0.1 degrees, from -125 to 125</em></small><br>
-    <br>
-    Humidity offset:<br>
-    <input type="text" name="humidity_offset" value="%d"><br>
-    <small><em>in 0.1 percents, from -125 to 125</em></small><br>
-    <br>
-    Calibration period:<br>
-    <select name="calibration_period">
-     <option value="4" %s>4 days</option>
-     <option value="28" %s>28 days</option>
-    </select><br>
-    <small><em>Period over which the sensor will recalibrate its IAQ values (requires restart)</em></small><br>
-   </fieldset>
+   %s<br><br>
    <br><br>
    <fieldset style='display: inline-block; width: 300px'>
     <legend>LED settings</legend>

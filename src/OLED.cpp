@@ -2,7 +2,7 @@
 
 SNTPtime NTPch("nl.pool.ntp.org");
 
-OLED::OLED(AQSensors *sensor)
+OLED::OLED(BME680 *sensor)
 {
 	_sensor = sensor;
 }

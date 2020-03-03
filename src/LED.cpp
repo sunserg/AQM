@@ -11,9 +11,9 @@ void LED::begin() {
 }
 
 void LED::loop() {
-    if (settingsData.led.blinkInterval > 0 &&
-        millis() - _lastBlink > 1000 * settingsData.led.blinkInterval) {
-        blink(aqSensors.getIAQ());
+    if (settings.getSettings()->bme680.blinkInterval > 0 &&
+        millis() - _lastBlink > 1000 * settings.getSettings()->bme680.blinkInterval) {
+        blink(bme680.getIAQ());
     }
 
     set(_targetRed, _targetGreen, _targetBlue);

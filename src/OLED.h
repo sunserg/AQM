@@ -15,7 +15,7 @@ class OLED
 {
   public:
     wl_status_t WIFI_conn; 
-    OLED(AQSensors* sensor);
+    OLED(BME680* sensor);
     void begin();
     void loop();
 
@@ -46,7 +46,7 @@ class OLED
     unsigned long lastDraw = 0;
     strDateTime dateTime;
 
-    AQSensors* _sensor;
+    BME680* _sensor;
 
     void drawFace();
     void drawArms(int hours, int minutes, int seconds);
