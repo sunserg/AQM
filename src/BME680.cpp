@@ -1,10 +1,11 @@
 #include "AQMonitor.h"
+#include "BME680.h"
 
-AQSensors::AQSensors() {
+BME680::BME680() {
     _lastStateUpdate = 0;
 }
 
-void AQSensors::begin() {
+void BME680::begin() {
     Wire.begin(I2C_SDA, I2C_SCL);
 
     // Init the sensor
@@ -54,7 +55,7 @@ void AQSensors::begin() {
         255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
         255,255,255,255,255,255,255,255,255,48,117,0,0,0,0,59,62,0,0};
 
-    if (settingsData.aqSensor.calibrationPeriod == 28) {
+    if (settings.getSettings()->bme680.calibrationPeriod == 28) {
         _iaqSensor.setConfig(generic_33v_300s_4d);
         logger.log("Calibration period: 28d");
     } else {
@@ -80,14 +81,14 @@ void AQSensors::begin() {
     checkIaqSensorStatus();
 }
 
-void AQSensors::loop() {
+void BME680::loop() {
     // Sensor shows the temperature of the chip itself and this is usually above ambient. An offset
     // can be configured to compensate for this. The offset depends on the PCB layout.
-    _iaqSensor.setTemperatureOffset(settingsData.aqSensor.temperatureOffset * -0.1f);
+    _iaqSensor.setTemperatureOffset(settings.getSettings()->bme680.temperatureOffset * -0.1f);
 
     if (_iaqSensor.run()) {
         _temp = _iaqSensor.temperature;
-        _humidity = _iaqSensor.humidity + (settingsData.aqSensor.humidityOffset * 0.1f);
+        _humidity = _iaqSensor.humidity + (settings.getSettings()->bme680.humidityOffset * 0.1f);
         _pressure = _iaqSensor.pressure;
         _gas_resistance = _iaqSensor.gasResistance;
 
@@ -101,36 +102,36 @@ void AQSensors::loop() {
     }
 }
 
-uint8_t AQSensors::getAccuracy() {
+uint8_t BME680::getAccuracy() {
     return _accuracy;
 }
 
-float AQSensors::getIAQ() {
+float BME680::getIAQ() {
     return _iaq;
 }
 
-float AQSensors::getStaticIAQ() {
+float BME680::getStaticIAQ() {
     return _static_iaq;
 }
 
-float AQSensors::getHumidity() {
+float BME680::getHumidity() {
     return _humidity;
 }
 
-float AQSensors::getTemp() {
+float BME680::getTemp() {
     return _temp;
 }
 
-float AQSensors::getPressure() {
+float BME680::getPressure() {
     return _pressure;
 }
 
-float AQSensors::getGasResistance() {
+float BME680::getGasResistance() {
     return _gas_resistance;
 }
 
 // Helper function definitions
-void AQSensors::checkIaqSensorStatus(void)
+void BME680::checkIaqSensorStatus(void)
 {
     if (_iaqSensor.status != BSEC_OK) {
         if (_iaqSensor.status < BSEC_OK) {
@@ -155,16 +156,16 @@ void AQSensors::checkIaqSensorStatus(void)
     }
 }
 
-void AQSensors::loadState(void)
+void BME680::loadState(void)
 {
-    uint8_t *state = settingsData.aqSensor.sensorCalibration;
+    uint8_t *state = settings.getSettings()->bme680.sensorCalibration;
     for (int i = 0; i < BSEC_MAX_STATE_BLOB_SIZE; i++) {
         // Check if we have non-zero calibration byte. If we do - the calibraiton
         // data is valid and can be used.
         if (state[i] != 0) {
             logger.log("Saved state not applied!");
 
-            _iaqSensor.setState(settingsData.aqSensor.sensorCalibration);
+            _iaqSensor.setState(settings.getSettings()->bme680.sensorCalibration);
             checkIaqSensorStatus();
             // The next line will prevent the state saving if the accuracy is less than 3.
             _lastStateUpdate = millis();
@@ -174,7 +175,7 @@ void AQSensors::loadState(void)
     }
 }
 
-void AQSensors::updateState(void)
+void BME680::updateState(void)
 {
     bool update = false;
     if (_iaqSensor.iaqAccuracy >= 3) {
@@ -190,10 +191,30 @@ void AQSensors::updateState(void)
 
     if (update) {
         _lastStateUpdate = millis();
-        _iaqSensor.getState(settingsData.aqSensor.sensorCalibration);
+        _iaqSensor.getState(settings.getSettings()->bme680.sensorCalibration);
         checkIaqSensorStatus();
         settings.save();
     }
 }
 
-AQSensors aqSensors = AQSensors();
+void BME680::get_config_page(char* buffer) {
+        sprintf_P(
+        buffer,
+        BME680_CONFIG_PAGE,
+        settings.getSettings()->bme680.temperatureOffset,
+        settings.getSettings()->bme680.humidityOffset,
+        (settings.getSettings()->bme680.calibrationPeriod != 28)?"selected":"",
+        (settings.getSettings()->bme680.calibrationPeriod == 28)?"selected":"",
+
+        settings.getSettings()->bme680.blinkInterval);
+}
+
+void BME680::parse_config_params(WebServerBase* webServer, bool& save) {
+    webServer->process_setting("temp_offset", settings.getSettings()->bme680.temperatureOffset, save);
+    webServer->process_setting("humidity_offset", settings.getSettings()->bme680.humidityOffset, save);
+    webServer->process_setting("calibration_period", settings.getSettings()->bme680.calibrationPeriod, save);
+        
+    webServer->process_setting("blink_interval", settings.getSettings()->bme680.blinkInterval, save); // TODO: move to led class
+}
+
+BME680 aqSensors = BME680();
