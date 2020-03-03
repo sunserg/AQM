@@ -81,7 +81,7 @@ void loop() {
     aqSensors.loop();
     settings.loop();
     led.loop();
-//    systemCheck.loop();
+    systemCheck.loop();
     telemetryCollector.loop();
 
     if (settingsData.influxDB.enable) {
@@ -90,6 +90,11 @@ void loop() {
     } else {
         telemetryCollector.stop();
         systemCheck.start();
+    }
+
+    // Disconnect after the first 30 minutes even in AP mode. TODO: change babk to 30m!
+    if (millis() > 1 * 60 * 1000) {
+        wifi.disconnect();
     }
 
     oled.loop();
