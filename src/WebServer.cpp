@@ -16,35 +16,37 @@ void WebServer::registerHandlers() {
 }
 
 void WebServer::handle_root() {
-    systemCheck->registerWebCall();
+    // systemCheck->registerWebCall();
     server->sendHeader("Location","/settings");
     server->send(303);
 }
 
 void WebServer::handle_get() {
-    systemCheck->registerWebCall();
+    // systemCheck->registerWebCall();
 
     sprintf_P(buffer,
               GET_JSON,
-              bme680.getTemp(),
-              bme680.getHumidity(),
-              bme680.getPressure(),
-              bme680.getGasResistance(),
-              bme680.getAccuracy(),
-              bme680.getIAQ(),
-              bme680.getStaticIAQ(),
+              tempSensor.getTemp(),
+              tempSensor.getHumidity(),
+              tempSensor.getPressure(),
+              tempSensor.getGasResistance(),
+              tempSensor.getAccuracy(),
+              tempSensor.getIAQ(),
+              tempSensor.getStaticIAQ(),
               ESP.getFreeHeap());
     server->send(200, "application/json", buffer);
 }
 
 void WebServer::handle_settings() {
-    systemCheck->registerWebCall();
+    // systemCheck->registerWebCall();
 
     bool save = false;
 
     wifi.parse_config_params(this, save);
     dataCollector.parse_config_params(this, save);
-    bme680.parse_config_params(this, save);
+    tempSensor.parse_config_params(this, save);
+    led.parse_config_params(this, save);
+
     if (save) {
         settings.save();
     }
@@ -56,20 +58,23 @@ void WebServer::handle_settings() {
     dataCollector.get_config_page(data_collector_settings);
 
     char temp_sensor_settings[strlen_P(BME680_CONFIG_PAGE) + 16];
-    bme680.get_config_page(temp_sensor_settings);
+    tempSensor.get_config_page(temp_sensor_settings);
 
+    char led_settings[strlen_P(LED_CONFIG_PAGE) + 16];
+    led.get_config_page(led_settings);
 
     sprintf_P(
         buffer,
         CONFIG_PAGE,
         network_settings,
         data_collector_settings,
-        temp_sensor_settings);
+        temp_sensor_settings,
+        led_settings);
     server->send(200, "text/html", buffer);
 }
 
 void WebServer::handle_reset() {
-    systemCheck->registerWebCall();
+    // systemCheck->registerWebCall();
     if (server->hasArg("full")) {
         // Erase absolutely all settings, even WiFi credentials.
         settings.erase();
@@ -84,7 +89,7 @@ void WebServer::handle_reset() {
 }
 
 void WebServer::handle_blink() {
-    systemCheck->registerWebCall();
+//    systemCheck->registerWebCall();
 
     if (server->hasArg("iaq")) {
         float iaq = server->arg("iaq").toFloat();

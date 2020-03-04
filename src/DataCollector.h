@@ -10,8 +10,10 @@ class DataCollector: public InfluxDBCollector {
         void onPush();
         bool shouldPush();
     private:
-        int lastCO2 = -1;
-        int lastPushedCO2 = -1;
+        int lastIAQ = -1;
+        int lastPushedIAQ = -1;
+        int lastIAQaccuracy = -1;
+        int lastPushedIAQaccuracy = -1;
         float lastTemp = -1;
         float lastPushedTemp = -1;
         float lastHumidity = -1;

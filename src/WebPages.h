@@ -10,13 +10,7 @@ const char CONFIG_PAGE[] PROGMEM = R"=====(
    %s<br><br>
    %s<br><br>
    %s<br><br>
-   <br><br>
-   <fieldset style='display: inline-block; width: 300px'>
-    <legend>LED settings</legend>
-    Blink interval:<br>
-    <input type="text" name="blink_interval" value="%d"><br>
-    <small><em>in seconds, 0 to disable blinking, max value - 3600</em></small><br>
-   </fieldset>
+   %s<br><br>
    <br><br>
    <input type="submit" value="Save" style='width: 150px;'>
    &nbsp;&nbsp;&nbsp;

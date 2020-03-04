@@ -21,9 +21,7 @@ extern WiFiManager wifi;
 #include "LED.h"
 #include "OLED.h"
 
-extern BME680 bme680;
-//extern SensairS8 co2;
-//extern PlantowerPMSx003 pm;
+extern BME680 tempSensor;
 extern DataCollector dataCollector;
 
 #define HTTP_PORT 80

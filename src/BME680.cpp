@@ -198,23 +198,19 @@ void BME680::updateState(void)
 }
 
 void BME680::get_config_page(char* buffer) {
-        sprintf_P(
+    sprintf_P(
         buffer,
         BME680_CONFIG_PAGE,
         settings.getSettings()->bme680.temperatureOffset,
         settings.getSettings()->bme680.humidityOffset,
         (settings.getSettings()->bme680.calibrationPeriod != 28)?"selected":"",
-        (settings.getSettings()->bme680.calibrationPeriod == 28)?"selected":"",
-
-        settings.getSettings()->bme680.blinkInterval);
+        (settings.getSettings()->bme680.calibrationPeriod == 28)?"selected":"");
 }
 
 void BME680::parse_config_params(WebServerBase* webServer, bool& save) {
     webServer->process_setting("temp_offset", settings.getSettings()->bme680.temperatureOffset, save);
     webServer->process_setting("humidity_offset", settings.getSettings()->bme680.humidityOffset, save);
     webServer->process_setting("calibration_period", settings.getSettings()->bme680.calibrationPeriod, save);
-        
-    webServer->process_setting("blink_interval", settings.getSettings()->bme680.blinkInterval, save); // TODO: move to led class
 }
 
 BME680 aqSensors = BME680();

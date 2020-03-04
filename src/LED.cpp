@@ -1,4 +1,5 @@
 #include "AQMonitor.h"
+#include "LED.h"
 #include <math.h>
 
 void LED::begin() {
@@ -11,9 +12,9 @@ void LED::begin() {
 }
 
 void LED::loop() {
-    if (settings.getSettings()->bme680.blinkInterval > 0 &&
-        millis() - _lastBlink > 1000 * settings.getSettings()->bme680.blinkInterval) {
-        blink(bme680.getIAQ());
+    if (settings.getSettings()->led.blinkInterval > 0 &&
+        millis() - _lastBlink > 1000 * settings.getSettings()->led.blinkInterval) {
+        blink(tempSensor.getIAQ());
     }
 
     set(_targetRed, _targetGreen, _targetBlue);
@@ -60,5 +61,17 @@ void LED::blink(float iaq) {
 
         logger.log("Blinking to %d, %d, %d", _targetRed, _targetGreen, _targetBlue);
 }
+
+void LED::get_config_page(char* buffer) {
+    sprintf_P(
+        buffer,
+        LED_CONFIG_PAGE,
+        settings.getSettings()->led.blinkInterval);
+}
+
+void LED::parse_config_params(WebServerBase* webServer, bool& save) {
+    webServer->process_setting("blink_interval", settings.getSettings()->led.blinkInterval, save);
+}
+
 
 LED led = LED();

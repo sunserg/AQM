@@ -1,6 +1,6 @@
 #include "AQMonitor.h"
 
-Logger logger = Logger();
+Logger logger = Logger(true);
 Settings settings = Settings();
 
 WiFiManager wifi = WiFiManager(&logger, &settings.getSettings()->network);
@@ -38,7 +38,7 @@ void loop() {
     tempSensor.loop();
     settings.loop();
     led.loop();
- //   systemCheck.loop();
+    // systemCheck.loop();
     dataCollector.loop();
 
     // if (settingsData.influxDB.enable) {
@@ -49,10 +49,10 @@ void loop() {
     //     systemCheck.start();
     // }
 
-    // Disconnect after the first 30 minutes even in AP mode. TODO: change babk to 30m!
-    if (millis() > 1 * 60 * 1000) {
-        wifi.disconnect();
-    }
+    // // Disconnect after the first 30 minutes even in AP mode.
+    // if (millis() > 30 * 60 * 1000) {
+    //     wifi.disconnect();
+    // }
 
     oled.loop();
 

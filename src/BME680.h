@@ -1,15 +1,11 @@
 #pragma once
 
-//#include "AQMonitor.h"
-//#include <Wire.h>
-//#include <EEPROM.h>
 #include "bsec.h"
 
 struct BME680Settings {
     int8_t temperatureOffset;  // In 0.1C
     int8_t humidityOffset;     // In mbar
     int16_t calibrationPeriod;    // 4 or 28 days
-    int8_t blinkInterval;     // In s TODO: move to LED class
     uint8_t sensorCalibration[BSEC_MAX_STATE_BLOB_SIZE];
 };
 
