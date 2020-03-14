@@ -18,6 +18,11 @@ ADC_MODE(ADC_VCC);
 
 void setup()
 {   
+    Serial.begin(115200);
+    while (! Serial) {
+        delay(1);
+    }
+    
     settings.begin();
     
     wifi.begin();
