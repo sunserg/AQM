@@ -29,8 +29,10 @@ void DataCollector::collectData() {
         append("temperature", tempSensor.getTemp(), 2);
         append("humidity", tempSensor.getHumidity(), 1);
         append("pressure", tempSensor.getPressure(), 1);
-        append("IAQ", tempSensor.getIAQ(), 2);
-        append("staticIAQ", tempSensor.getStaticIAQ(), 2);
+        append("IAQ", tempSensor.getIAQ());
+        append("staticIAQ", tempSensor.getStaticIAQ());
+        append("gas_resistance", tempSensor.getGasResistance());
+        append("free_heap", ESP.getFreeHeap());
 
         if (lastPushedHumidity < 0) {
             lastPushedTemp = tempSensor.getTemp();
